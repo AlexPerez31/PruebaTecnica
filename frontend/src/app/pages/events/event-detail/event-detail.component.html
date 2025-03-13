@@ -1,0 +1,53 @@
+<div class="button-container">
+  <button class="btn-register" (click)="registerToEvent()">Registrarse al evento</button>
+  <button *ngIf="!showRegisterButtonOnly" class="btn-add-session" (click)="navigateToCreateSession()">Agregar Sesión</button>
+  <button *ngIf="!showRegisterButtonOnly" class="btn-edit-event" (click)="navigateToEditEvent()">Editar evento</button>
+  <button *ngIf="!showRegisterButtonOnly" class="btn-delete-event" (click)="deleteEvent()">Eliminar evento</button>
+</div>
+
+<div class="card" *ngIf="event">
+  <div class="header">
+    <h2>{{ event.name }}</h2>
+  </div>
+  <div class="content">
+    <p class="description">{{ event.description }}</p>
+    <div class="details">
+      <div class="detail">
+        <span>Capacidad:</span>
+        <strong>{{ event.capacity }}</strong>
+      </div>
+      <div class="detail">
+        <span>Estado:</span>
+        {{ event.status }}
+      </div>
+      <div class="detail">
+        <span>Fecha:</span>
+        {{ event.date | date:'medium' }}
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="table-container">
+  <div *ngIf="isLoading" class="loading">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Cargando sesiones...</p>
+  </div>
+
+  <h3>Sesiones</h3>
+
+  <app-sessions-table
+    *ngIf="!isLoading && dataSource.data.length > 0" 
+    [dataSource]="dataSource" 
+    [displayedColumns]="displayedColumns"
+    [onEdit]="edidSession"
+    [onDelete]="deleteSession">
+  </app-sessions-table>
+
+  <div *ngIf="!isLoading && dataSource.data.length === 0" class="no-events">
+    <p>No hay sesiones disponibles</p>
+  </div>
+</div>
+
+<div class="loading" *ngIf="loading">Cargando...</div>
+<div class="error" *ngIf="error">{{ error }}</div>

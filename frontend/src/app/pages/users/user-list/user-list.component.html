@@ -1,0 +1,22 @@
+<div class="all-events-container">
+    <h1>Administrar Usuarios</h1>
+
+    <div class="table-container">
+      <div *ngIf="isLoading" class="loading">
+        <mat-spinner diameter="50"></mat-spinner>
+        <p>Cargando usuarios...</p>
+      </div>
+  
+      <app-users-table 
+        *ngIf="!isLoading && dataSource.data.length > 0" 
+        [dataSource]="dataSource" 
+        [displayedColumns]="displayedColumns"
+        [onEdit]="editUser"
+        [onDelete]="deleteUser">
+      </app-users-table>
+  
+      <div *ngIf="!isLoading && dataSource.data.length === 0" class="no-events">
+        <p>No hay usuarios disponibles</p>
+      </div>
+    </div>
+</div>

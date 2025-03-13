@@ -1,0 +1,31 @@
+<div class="all-events-container">
+    <h1>Todos los Eventos</h1>
+  
+    <div class="search-container">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        placeholder="Buscar eventos..." 
+        (keyup.enter)="onSearch()"
+      >
+      <button (click)="onSearch()">Buscar</button>
+    </div>
+  
+    <div class="table-container">
+      <div *ngIf="isLoading" class="loading">
+        <mat-spinner diameter="50"></mat-spinner>
+        <p>Cargando eventos...</p>
+      </div>
+  
+      <app-events-table 
+        *ngIf="!isLoading && dataSource.data.length > 0" 
+        [dataSource]="dataSource" 
+        [displayedColumns]="displayedColumns"
+        [onViewDetails]="navigateToEvent">
+      </app-events-table>
+  
+      <div *ngIf="!isLoading && dataSource.data.length === 0" class="no-events">
+        <p>No hay eventos disponibles</p>
+      </div>
+    </div>
+</div>

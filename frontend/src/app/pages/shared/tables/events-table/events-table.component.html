@@ -1,0 +1,41 @@
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 events-table">
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let event">{{ event.name }}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="capacidad">
+      <th mat-header-cell *matHeaderCellDef>Capacidad</th>
+      <td mat-cell *matCellDef="let event">{{ event.capacity }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let event">{{ event.status }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef>Fecha</th>
+      <td mat-cell *matCellDef="let event">{{ event.date | date:'dd/MM/yyyy' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="accion">
+      <th mat-header-cell *matHeaderCellDef>Acción</th>
+      <td mat-cell *matCellDef="let event">
+        <button mat-button (click)="onViewDetails(event.id)">Ver detalles</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+</div>

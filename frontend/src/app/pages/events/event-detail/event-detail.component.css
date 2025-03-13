@@ -1,0 +1,101 @@
+.card {
+  max-width: 400px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background: linear-gradient(135deg, #ff6b35, #ff9a00);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.description {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.details {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #fff3e0;
+  border-radius: 4px;
+}
+
+.loading {
+  text-align: center;
+  color: #ff6b35;
+  margin: 2rem;
+}
+
+.error {
+  text-align: center;
+  color: #c62828;
+  margin: 2rem;
+  padding: 1rem;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; 
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+.btn-register {
+  background-color: green; 
+}
+
+.btn-register:hover {
+  background-color: darkgreen; 
+}
+
+.btn-add-session {
+  background-color: #FF8C00; 
+}
+
+.btn-add-session:hover {
+  background-color: #e07b00; 
+}
+
+.btn-edit-event {
+  background-color: #1976d2; 
+}
+
+.btn-edit-event:hover {
+  background-color: darkblue; 
+}
+
+.btn-delete-event {
+  background-color: #c62828; 
+}
+
+.btn-delete-event:hover {
+  background-color: darkred; 
+}

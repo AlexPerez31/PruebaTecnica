@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+  <div class="container-fluid">
+
+    <div class="navbar-brand-container">
+      <a class="navbar-brand" routerLink="/my-events">Gestor de Eventos</a>
+    </div>
+
+    <div class="user-info ms-3 d-flex">
+      <span class="user-name fw-semibold">{{ userName }}</span>
+      <span class="user-role badge bg-warning text-dark">{{ userRole }}</span>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-outline-light me-2" (click)="navigateTo('/all-events')">Todos los Eventos</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-light me-2" (click)="navigateTo('/my-events')">Mis Eventos</button>
+        </li>
+        <li class="nav-item" *ngIf="isOrganizerOrAdmin()">
+          <button class="btn btn-outline-light me-2" (click)="navigateTo('/create-event')">Crear Evento</button>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <button class="btn btn-outline-light me-2" (click)="navigateTo('/users')">Usuarios</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-danger" (click)="logout()">Salir</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

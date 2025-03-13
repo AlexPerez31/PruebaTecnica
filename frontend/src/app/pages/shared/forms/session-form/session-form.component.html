@@ -1,0 +1,64 @@
+<div class="form-container">
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="title">Titulo</label>
+      <input 
+        type="text" 
+        id="title" 
+        formControlName="title" 
+        class="form-control"
+        [ngClass]="{'invalid': submitted && f['title'].errors}"
+      >
+      <div class="error-message" *ngIf="submitted && f['title'].errors">
+        El titulo es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="speaker">Ponente</label>
+      <input 
+        type="text" 
+        id="speaker" 
+        formControlName="speaker" 
+        class="form-control"
+        [ngClass]="{'invalid': submitted && f['speaker'].errors}"
+      >
+      <div class="error-message" *ngIf="submitted && f['speaker'].errors">
+        El ponente es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="start_time">Hora de inicio</label>
+      <input 
+      type="datetime-local"
+        id="start_time" 
+        formControlName="start_time" 
+        class="form-control"
+        [ngClass]="{'invalid': submitted && f['start_time'].errors}"
+      >
+      <div class="error-message" *ngIf="submitted && f['start_time'].errors">
+        La hora de inicio es obligatoria
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="end_time">Hora de fin</label>
+      <input 
+      type="datetime-local"
+        id="end_time" 
+        formControlName="end_time" 
+        class="form-control"
+        [ngClass]="{'invalid': submitted && f['end_time'].errors}"
+      >
+      <div class="error-message" *ngIf="submitted && f['end_time'].errors">
+        La hora de fin es obligatoria
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-button">Guardar</button>
+    </div>
+  </form>
+</div>

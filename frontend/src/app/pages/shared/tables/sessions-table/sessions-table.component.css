@@ -1,0 +1,75 @@
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .events-table th {
+    background-color: #ff6600 !important;
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 16px !important;
+  }
+  
+  .events-table td {
+    padding: 12px !important;
+    border-bottom: 1px solid #ffcc80; 
+  }
+  
+
+  .events-table tr:hover {
+    background-color: #fff3e0; 
+  }
+  
+  .events-table button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .events-table button:hover {
+    background-color: #e65c00; 
+    transform: translateY(-1px);
+  }
+  
+  ::ng-deep .mat-paginator {
+    background-color: #ffecb3;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 8px;
+  }
+  
+  ::ng-deep .mat-paginator-range-label,
+  ::ng-deep .mat-paginator-page-size-label {
+    color: #ff6600 !important; 
+    font-weight: 500;
+  }
+
+
+.events-table button {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+
+  ::ng-deep .mat-paginator-navigation {
+    color: #ff6600 !important;
+  }
+  
+  ::ng-deep .mat-paginator-navigation:hover {
+    background-color: #ff66001a;
+    border-radius: 50%;
+  }
+
+  .edit-btn {
+    color: white !important;
+    background-color: #1976d2 !important; 
+    margin-right: 8px !important;
+  }
+  
+  .delete-btn {
+    color: white !important;
+    background-color: #d32f2f !important; 
+  }
